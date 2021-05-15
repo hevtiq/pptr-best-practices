@@ -22,7 +22,7 @@ describe("Web site", () => {
 
     it("should show page", async () => {
       await expect(page.title()).resolves.toMatch("shinteam");
-      await percySnapshot(page, "Top page");
+      // await percySnapshot(page, "Top page");
     });
   });
 });
