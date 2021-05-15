@@ -21,7 +21,7 @@ describe("Web site", () => {
     });
 
     it("should show page", async () => {
-      await expect(page.title()).resolves.toMatch("nuxt-percy-sample");
+      await expect(page.title()).resolves.toMatch("shinteam");
       await percySnapshot(page, "Top page");
     });
   });
