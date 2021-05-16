@@ -1,14 +1,13 @@
+# https://circleci.com/developer/orbs/orb/circleci/node
 version: 2.1
 
 orbs:
-  # node: circleci/node@4.1
-  percy: percy/agent@1.0.0
+  node: circleci/node@4.1
 
 jobs:
-  build-and-test:
+  my-app:
     docker:
-      # - image: circleci/node:latest-browsers
-      - image: percyio/agent:latest
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
       - node/install-packages:
@@ -21,4 +20,4 @@ workflows:
   version: 2
   build:
     jobs:
-      - build-and-test
+      - my-app
