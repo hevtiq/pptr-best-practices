@@ -1,8 +1,7 @@
 version: 2.1
 
 orbs:
-  # node: circleci/node@4.1
-  percy: percy/agent@0.28.6
+  node: circleci/node@4.1
 
 jobs:
   build-and-test:
@@ -21,6 +20,3 @@ workflows:
   build:
     jobs:
       - build-and-test
-      - percy/finalize_all:
-          requires:
-            - build-and-test
