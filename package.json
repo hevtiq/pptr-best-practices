@@ -8,7 +8,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest",
-    "test:e2e": "jest -c e2e/jest.config.js e2e --detectOpenHandles --forceExit",
+    "test:e2e": "jest -c e2e/jest.config.js e2e --timeout=30000 --detectOpenHandles --forceExit",
     "test:percy": "percy exec -- yarn test:e2e --detectOpenHandles --forceExit --verbose"
   },
   "dependencies": {
