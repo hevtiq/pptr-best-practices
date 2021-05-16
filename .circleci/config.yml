@@ -15,11 +15,11 @@ jobs:
           pkg-manager: yarn
       - run: yarn install
       - run: yarn build
-      - run: yarn start
-      - run: yarn test:percy
+      # - run: yarn test:percy
       # debug cli
       - run: yarn percy exec -- percy health-check
       - run: yarn percy exec -- curl localhost:3000
+      - run: yarn percy snapshot localhost:3000 # run Percy
 
 workflows:
   version: 2
