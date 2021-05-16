@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { percySnapshot } = require("@percy/puppeteer");
+const percySnapshot = require("@percy/puppeteer");
 
 describe("Web site", () => {
   const BASE_URL = "http://localhost:3000";
