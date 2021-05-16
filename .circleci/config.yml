@@ -1,24 +1,23 @@
 version: 2.1
 
 orbs:
-  percy: percy/agent@0.1.3
+  node: circleci/node@4.1
+
 
 jobs:
-  build_test:
+  build-and-test:
     docker:
-      - image: circleci/node:12.3-browsers
-    working_directory: ~/repo
+      - image: circleci/node:latest-browsers
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: yarn
       - run: yarn install
       - run: yarn build
       - run: yarn test:percy
 
 workflows:
-  version: 2
-  build:
+  sample:
     jobs:
-      - build_test
-      - percy/finalize_all:
-          requires:
-            - build_test
+      - build-and-test
+

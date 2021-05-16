@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { percySnapshot } = require("@percy/puppeteer");
+const percySnapshot = require("@percy/puppeteer");
 
 describe("Web site", () => {
   const BASE_URL = "http://localhost:3000";
@@ -17,11 +17,13 @@ describe("Web site", () => {
 
   describe("top page", () => {
     beforeAll(async () => {
-      await page.goto(BASE_URL);
+      await page.goto(BASE_URL, { waitUntil: "networkidle2" });
+      // wait for 3s delay time
+      await page.waitForTimeout(3000);
     });
 
     it("should show page", async () => {
-      await expect(page.title()).resolves.toMatch("nuxt-percy-sample");
+      await expect(page.title()).resolves.toMatch("shinteam");
       await percySnapshot(page, "Top page");
     });
   });
