@@ -18,6 +18,8 @@ describe("Web site", () => {
   describe("top page", () => {
     beforeAll(async () => {
       await page.goto(BASE_URL);
+      // wait for 3s delay time
+      await page.waitForTimeout(3000);
     });
 
     it("should show page", async () => {
