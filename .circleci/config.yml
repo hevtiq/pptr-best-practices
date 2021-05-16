@@ -15,6 +15,9 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn test:percy
+      # debug cli
+      - run: yarn percy exec -- percy health-check
+      - run: yarn percy exec -- curl localhost:3000
 
 workflows:
   version: 2
