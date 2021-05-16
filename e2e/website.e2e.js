@@ -17,7 +17,7 @@ describe("Web site", () => {
 
   describe("top page", () => {
     beforeAll(async () => {
-      await page.goto(BASE_URL);
+      await page.goto(BASE_URL, { waitUntil: "networkidle2" });
       // wait for 3s delay time
       await page.waitForTimeout(3000);
     });
