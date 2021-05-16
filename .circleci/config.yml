@@ -18,7 +18,7 @@ jobs:
       # - run: yarn test:percy
       # debug cli
       - run: yarn percy exec -- percy health-check
-      - run: yarn percy exec -- curl localhost:3000
+      # - run: yarn percy exec -- curl localhost:3000
       - run: yarn percy snapshot localhost:3000 # run Percy
 
 workflows:
