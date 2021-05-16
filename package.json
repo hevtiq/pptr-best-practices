@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "test": "jest",
     "test:e2e": "jest -c e2e/jest.config.js e2e --detectOpenHandles --forceExit",
-    "test:percy": "percy exec --verbose -- yarn test:e2e --detectOpenHandles --forceExit"
+    "test:percy": "percy exec -- yarn test:e2e --detectOpenHandles --forceExit --verbose"
   },
   "dependencies": {
     "core-js": "^3.9.1",
